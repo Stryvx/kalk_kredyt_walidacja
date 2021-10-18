@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+	<title>Kalkulator kredytowy</title>
+</h:head>
+
+<h:body>
+
+<p:panel header="Oblicz ratę kredytu" style="margin: 1em auto">
+
+	<h:form id="bla">
+	
+	        <h:panelGrid id="grid" columns="3" cellpadding="7">
+	        
+	            <p:outputLabel for="x" value="Podaj kwotę: "/>
+	            <p:inputText id="x" required="true" value="#{kredytBB.x}"  requiredMessages="Nie podano kwoty."/>
+	            <p:message for="x"/>
+	            
+	            <p:outputLabel for="y" value="Podaj ile lat: "/>
+	            <p:inputText id="y" required="true" value="#{kredytBB.y}"  requiredMessages="Nie podano lat."/>
+	            <p:message for="y"/>
+	
+	        </h:panelGrid>
+	        
+	        <h:messages id="msg" />
+			<h:commandButton value="Oblicz rate" action="#{kredytBB.calc()}" update="@form"/>
+			
+	</h:form>
+</p:panel>
+</h:body>
+</html>
